@@ -1,0 +1,15 @@
+﻿<Application x:Class="WeatherWorks.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WeatherWorks"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage UriSource="Images\Rain.png" x:Key="RainIcon"></BitmapImage>
+            <BitmapImage UriSource="Images\Sunny.png" x:Key="SunnyIcon"></BitmapImage>
+            <BitmapImage UriSource="Images\Thunderstorm.png" x:Key="StormIcon"></BitmapImage>
+            <BitmapImage UriSource="Images\Clouds.png" x:Key="CloudsIcon"></BitmapImage>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>

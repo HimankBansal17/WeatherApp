@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="WeatherWorks.UserControls.CurrentWeather"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WeatherWorks.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="271.136" d:DesignWidth="785.804">
+    <Border CornerRadius="20 20 20 20" Margin="20,20,20,0" BorderBrush="#FFBBBBBB" BorderThickness="0.5,0.5,0.5,0.5" Background="#01000000"  VerticalAlignment="Top">
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="30,1,30,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Label x:Name="CurrentWeatherLabel" Background="{x:Null}" FontSize="16" Content="Current Weather" HorizontalAlignment="Left"  VerticalAlignment="Center" FontWeight="Bold" Foreground="#FFF4F5F6" Margin="15,0,0,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100">
+
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="100">
+
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="150">
+
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border>
+                    <Image x:Name="WeatherIconImage" Width="100" Height="100" Source="/Images/Sunny.png">
+
+                    </Image>
+                </Border>
+                <Border Grid.Column="1">
+                    <Label x:Name ="CurrentTemperatureLabel" Content="" Foreground="White" FontSize="36" VerticalAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="2">
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <Label x:Name="WeatherShortDescLabel" FontWeight="Bold" Foreground="AntiqueWhite" Content="" FontSize="25"></Label>
+                        <Label x:Name="FeelsLikeTempLabel" Foreground="AntiqueWhite" Content="" FontSize="20"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.ColumnSpan="3">
+                    <Label x:Name ="WeatherDescLabel" Content="add description here" Foreground="White" FontSize="18" VerticalAlignment="Center"/>
+                </Border>
+
+            </Grid>
+            <Grid VerticalAlignment="Center" Height="60" Margin="0,10,0,0">
+                <Grid.Resources >
+                    <Style TargetType="Border" >
+                        <Setter Property="Padding" Value="1,1,1,1" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border >
+                    <StackPanel>
+                        <Label Content="Wind" Foreground="WhiteSmoke" />
+                        <Label x:Name="WindLabel" Content="" Foreground="WhiteSmoke" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1">
+                    <StackPanel>
+                        <Label Content="Humidity" Foreground="WhiteSmoke" />
+                        <Label x:Name="HumidityLabel" Content="" Foreground="WhiteSmoke" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="2">
+                    <StackPanel>
+                        <Label  Content="Visibility" Foreground="WhiteSmoke" />
+                        <Label x:Name="VisibilityLabel" Content="" Foreground="WhiteSmoke" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="3">
+                    <StackPanel>
+                        <Label Content="Pressure" Foreground="WhiteSmoke" />
+                        <Label x:Name="PressureLabel" Content="" Foreground="WhiteSmoke" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="4">
+                    <StackPanel>
+                        <Label Content="Clouds" Foreground="WhiteSmoke" />
+                        <Label x:Name="CloudsLabel" Content="" Foreground="WhiteSmoke" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
+
+    </Border>
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Clouds.png" />
+    <None Remove="Images\Few Clouds.png" />
+    <None Remove="Images\Rain.png" />
+    <None Remove="Images\ScatteredClouds.png" />
+    <None Remove="Images\Sunny.png" />
+    <None Remove="Images\Thunderstorm.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Thunderstorm.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WeatherWorks.Services\WeatherWorks.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WeatherWorks.Client">
+      <HintPath>..\WeatherWorks.Client\bin\Debug\net6.0\WeatherWorks.Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Clouds.png" />
+    <Resource Include="Images\Rain.png" />
+    <Resource Include="Images\Sunny.png" />
+  </ItemGroup>
+
+</Project>
