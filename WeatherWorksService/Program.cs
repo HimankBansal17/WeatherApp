@@ -20,7 +20,12 @@ builder.Services.AddSwaggerGen(c =>
 var apiKey = builder.Configuration["ExternalApi:OpenWeatherApi:ApiKey"];
 var baseUrl = builder.Configuration["ExternalApi:OpenWeatherApi:BaseUrl"];
 
-builder.WebHost.UseKestrel();
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5000); // HTTP
+    options.ListenAnyIP(5001, listenOptions => listenOptions.UseHttps()); // HTTPS
+});
+
 builder.Services.AddTransient<IOpenWeatherAPIClient>( _ => {
     var httpClient = new HttpClient();
     httpClient.BaseAddress = new Uri(baseUrl);

@@ -1,14 +1,5 @@
 ﻿{
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:28150",
-      "sslPort": 44320
-    }
-  },
-  "profiles": {
+   "profiles": {
     "WeatherWorksService": {
       "commandName": "Project",
       "dotnetRunMessages": true,
@@ -18,14 +9,5 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
     }
-  }
-}
+ }
