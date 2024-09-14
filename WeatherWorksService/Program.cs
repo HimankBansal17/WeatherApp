@@ -31,6 +31,12 @@ builder.Services.AddTransient<IOpenWeatherAPIClient>( _ => {
 
 builder.Services.AddTransient<IWeatherService, WeatherService>();
 builder.Host.UseWindowsService();
+builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+{
+    builder.AllowAnyOrigin();
+    builder.AllowAnyMethod();
+    builder.AllowAnyHeader();
+}));
 var app = builder.Build();
 
 
@@ -46,6 +52,7 @@ app.UseHttpsRedirection();
 app.UseMiddleware<ApiKeyAuthMiddleware>();
 app.UseAuthorization();
 app.UseAuthentication();
+app.UseCors("MyPolicy");
 
 app.MapControllerRoute(
     name: "default",
